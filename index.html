@@ -12,9 +12,15 @@
     />
   </head>
   <body class="bg-primary-subtle">
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline d-flex gap-3" id="search-car-form">
+        <input class="form-control mr-sm-2" type="search" placeholder="Nº da placa do carro" aria-label="Search" name="placa" id="procurar-input">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Buscar</button>
+      </form>
+    </nav>
     <section>
       <div id="veiculos">
-        <div class="table-responsive">
+        <div class="table-responsive mt-2">
           <table class="table">
               <thead>
                   <tr>
@@ -123,9 +129,32 @@
   </div>
 
   <!--MODAL DO CREATE-->
+
+
+
+  <!--MODAL DO SEARCH-->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchCarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="searchCarModalLabelTitle">Buscar Veículo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="search-modal-content">
+          <h4 id="seeked-car-license-plate"></h3>
+          <h4 id="seeked-car-year"></h3>
+          <h4 id="seeked-car-model"></h3>
+          <h4 id="seeked-car-distribuitor"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!--MODAL DO SEARCH-->
+
+
   <div class="d-flex justify-content-center gap-2">
     <button onclick="location.reload()" class="btn btn-info">Atualizar</button>
-    <button id="new-car-btn" onclick="addCar()" class="btn btn-success">Cadastrar Carro</button>
+    <button id="new-car-btn" onclick="addCar()" class="btn btn-success .d-none">Cadastrar Carro</button>
   </div>
 </main>
     <script
@@ -135,5 +164,6 @@
     ></script>
     <script src="./js/home.js"></script>
     <script src="./js/addCar.js"></script>
+    <script src="./js/searchCar.js"></script>
   </body>
 </html>

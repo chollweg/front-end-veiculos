@@ -89,7 +89,9 @@ async function tableConstruction() {
 tableConstruction();
 
 async function deleteVehicle(id) {
-  let req = await fetch(api + `/veiculos/${id}`, { method: "DELETE" });
+  let req = await fetch(api + `/veiculos/${id}`, {
+    method: "DELETE",
+  });
   let res = req.json();
   console.log(res);
 }
